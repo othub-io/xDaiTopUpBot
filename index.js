@@ -2,7 +2,7 @@
 
 const { checkXDAIBalance, sendXDAIIfNeeded } = require('./src/modules/blockchainService.js');
 const { sendMessage } = require('./src/modules/telegramService.js');
-const { walletAddresses, balanceThreshold, senderPrivateKey } = require('./src/config');
+const { walletAddresses, balanceThreshold, senderPrivateKey, senderWalletAddress } = require('./src/config');
 
 // async function monitorBalanceAndNotify() {
 //     for (let address of walletAddresses) {
@@ -18,6 +18,14 @@ const { walletAddresses, balanceThreshold, senderPrivateKey } = require('./src/c
 // monitorBalanceAndNotify().then(() => console.log('Monitoring job completed.'));
 
 async function monitorAndTopUpWallets() {
+    const senderBalance = await checkXDAIBalance(senderWalletAddress);
+    console.log(`Faucet balance: ${senderBalance} xDai`);
+
+    if (parseFloat(senderBalance) < parseFloat(balanceThreshold)) {
+        console.log(`Faucet balance is below threshold: ${senderBalance} xDai`);
+        await sendMessage(`Alert: Faucet balance is low (${senderBalance} xDai). Please top up.`);
+    }
+    
     for (let address of walletAddresses) {
         const balance = await checkXDAIBalance(address);
         console.log(`Checking balance for ${address}: ${balance} xDai`);
