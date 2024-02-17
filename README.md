@@ -18,7 +18,7 @@
 
 - Node.js (version 12.x or higher recommended)
 - A Telegram bot token and chat ID for notifications
-- An xDai wallet with sufficient funds for top-ups (also works on other evm chains)
+- An xDai hot wallet with sufficient funds for top-ups (also works on other evm chains)
 
 ### Installation
 
