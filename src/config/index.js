@@ -6,5 +6,6 @@ module.exports = {
     gnosisRpcUrl: process.env.GNOSIS_RPC_URL,
     walletAddresses: JSON.parse(process.env.WALLET_ADDRESS || '[]'),
     balanceThreshold: process.env.BALANCE_THRESHOLD,
-    senderPrivateKey: process.env.SENDER_PRIVATE_KEY
+    senderPrivateKey: process.env.SENDER_PRIVATE_KEY,
+    senderWalletAddress: process.env.SENDER_WALLET_ADDRESS
 };
