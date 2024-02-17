@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "add": "^2.0.6",
     "axios": "^1.6.7",
     "dotenv": "^16.4.4",
+    "ethers": "5.7",
     "web3": "^4.5.0"
   }
 }
