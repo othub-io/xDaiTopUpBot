@@ -34,7 +34,7 @@ async function monitorAndTopUpWallets() {
                 await sendMessage(`Failed to send xDai to ${address}: ${error.message}`);
             }
         } else {
-            await sendMessage(`Balance check for ${address}: Balance is sufficient (${balance} xDai).`);
+            // await sendMessage(`Balance check for ${address}: Balance is sufficient (${balance} xDai).`);
         }
     }
 }
