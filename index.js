@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { checkXDAIBalance, sendXDAIIfNeeded } = require('./src/modules/blockchainService.js');
 const { sendMessage } = require('./src/modules/telegramService.js');
 const { walletAddresses, balanceThreshold, senderPrivateKey } = require('./src/config');
