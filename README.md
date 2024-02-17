@@ -24,3 +24,19 @@
 
 1. Clone the repository:
 
+git clone https://github.com/yourusername/xDaiAutoTopUp.git
+cd xDaiAutoTopUp
+
+2. Install dependencies:
+
+npm install
+
+3. Configure your environment variables:
+
+cp .env-example .env && nano .env
+
+### Usage
+
+Run the script to start monitoring and automatically top up your wallets:
+
+node index.js
